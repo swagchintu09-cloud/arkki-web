@@ -67,7 +67,7 @@ export function Hero() {
                   A feature-rich, modern Discord bot with a beautiful UI, best-in-class music system, advanced moderation, and automation tools. Built with the latest JavaScript libraries and MongoDB for performance and reliability.
                 </p>
                 <div data-animate className="flex flex-col sm:flex-row gap-4 mt-6 opacity-0">
-                  <Button size="lg" className="font-bold text-base group">
+                  <Button size="lg" className="font-bold text-base group breathing-button">
                     Add to Discord 
                     <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>

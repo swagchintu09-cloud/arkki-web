@@ -5,27 +5,22 @@ import { cn } from '@/lib/utils';
 // Adapted from https://codepen.io/alphardex/pen/vYEYdQP
 export function Particles({
   className,
-  quantity = 100,
-  staticity = 50,
+  quantity = 150,
   ease = 50,
+  connectDistance = 100,
 }: {
   className?: string;
   quantity?: number;
   staticity?: number;
   ease?: number;
+  connectDistance?: number;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const circles = useRef<any[]>([]);
   const mousePosition = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-  const mouse = useRef<{ x: number; y: number; isDown: boolean }>({
-    x: 0,
-    y: 0,
-    isDown: false,
-  });
   const requestAnimationFrameRef = useRef<number>(0);
-  const resizeObserverRef = useRef<ResizeObserver | null>(null);
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -73,30 +68,28 @@ export function Particles({
     }
   };
 
-  const drawParticle = (circle: any, update = false) => {
+  const drawParticle = (particle: any) => {
     if (context.current) {
-      const { x, y, S, R } = circle;
       context.current.beginPath();
-      context.current.arc(x, y, R, 0, 2 * Math.PI);
+      context.current.arc(particle.x, particle.y, particle.R, 0, 2 * Math.PI);
       context.current.closePath();
-      context.current.globalAlpha = S;
+      context.current.fillStyle = `hsla(var(--primary), ${particle.S})`;
       context.current.fill();
     }
   };
 
   const drawParticles = () => {
     clearContext();
-    const particleCount = quantity;
-    for (let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < quantity; i++) {
+      const R = Math.random() * 1.5 + 0.5;
+      const S = (Math.random() * 0.5) + 0.1;
       const circle = {
         x: Math.random() * canvasRef.current!.width,
         y: Math.random() * canvasRef.current!.height,
-        translateX: 0,
-        translateY: 0,
-        R: Math.random() * 2,
-        S: Math.random() * 0.4, // Opacity
-        dX: (Math.random() - 0.5) * 0.1, // Delta X
-        dY: (Math.random() - 0.5) * 0.1, // Delta Y
+        R,
+        S,
+        dX: (Math.random() - 0.5) * 0.3,
+        dY: (Math.random() - 0.5) * 0.3,
       };
       circles.current.push(circle);
       drawParticle(circle);
@@ -114,45 +107,56 @@ export function Particles({
     }
   };
 
+  const findDistance = (p1: any, p2: any) => {
+    return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
+  }
+
+  const connectParticles = () => {
+    if (!context.current) return;
+    const particlesWithMouse = [...circles.current, { ...mousePosition.current, R: 0, S: 0, dX: 0, dY: 0 }];
+
+    for (let i = 0; i < particlesWithMouse.length; i++) {
+      for (let j = i + 1; j < particlesWithMouse.length; j++) {
+        const distance = findDistance(particlesWithMouse[i], particlesWithMouse[j]);
+        if (distance < connectDistance) {
+            const opacity = 1 - (distance / connectDistance);
+            context.current.strokeStyle = `hsla(var(--primary), ${opacity * 0.5})`;
+            context.current.lineWidth = 0.5;
+            context.current.beginPath();
+            context.current.moveTo(particlesWithMouse[i].x, particlesWithMouse[i].y);
+            context.current.lineTo(particlesWithMouse[j].x, particlesWithMouse[j].y);
+            context.current.stroke();
+        }
+      }
+    }
+  }
+
+
   const animate = () => {
     clearContext();
-    circles.current.forEach((circle, i) => {
-      // Handle "static" particles
-      if (i < circles.current.length / 2) {
-        circle.x += circle.dX;
-        circle.y += circle.dY;
+    
+    circles.current.forEach((particle, i) => {
+      // Mouse interaction
+      const distanceToMouse = findDistance(particle, mousePosition.current);
+      if (distanceToMouse < ease) {
+        particle.x += (mousePosition.current.x - particle.x) / (ease / 2);
+        particle.y += (mousePosition.current.y - particle.y) / (ease / 2);
       } else {
-        // Handle mouse-following particles
-        circle.translateX +=
-          (mousePosition.current.x - circle.translateX) / (ease / 2);
-        circle.translateY +=
-          (mousePosition.current.y - circle.translateY) / (ease / 2);
-        circle.x = circle.translateX;
-        circle.y = circle.translateY;
+        particle.x += particle.dX;
+        particle.y += particle.dY;
       }
       
       // Boundary conditions
-      if (
-        circle.x < -50 ||
-        circle.x > canvasRef.current!.width + 50 ||
-        circle.y < -50 ||
-        circle.y > canvasRef.current!.height + 50
-      ) {
-        circles.current.splice(i, 1);
-        const newCircle = {
-          x: Math.random() * canvasRef.current!.width,
-          y: Math.random() * canvasRef.current!.height,
-          translateX: 0,
-          translateY: 0,
-          R: Math.random() * 2,
-          S: Math.random() * 0.4,
-          dX: (Math.random() - 0.5) * 0.1,
-          dY: (Math.random() - 0.5) * 0.1,
-        };
-        circles.current.push(newCircle);
-      }
-      drawParticle(circle);
+      if (particle.x < 0) particle.x = canvasRef.current!.width;
+      if (particle.x > canvasRef.current!.width) particle.x = 0;
+      if (particle.y < 0) particle.y = canvasRef.current!.height;
+      if (particle.y > canvasRef.current!.height) particle.y = 0;
+
+      drawParticle(particle);
     });
+
+    connectParticles();
+
     requestAnimationFrameRef.current = requestAnimationFrame(animate);
   };
 

@@ -51,7 +51,7 @@ export default function Home() {
             <p className="text-xl font-bold font-headline">Arrkiii</p>
           </div>
           <div className="hidden md:block">
-            <Button className="group">
+            <Button className="group breathing-button">
               Add to Discord 
               <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
@@ -73,7 +73,7 @@ export default function Home() {
                     <Logo />
                     <p className="text-xl font-bold font-headline">Arrkiii</p>
                   </div>
-                  <Button>
+                  <Button className="breathing-button">
                     Add to Discord <ArrowRight />
                   </Button>
                 </div>
