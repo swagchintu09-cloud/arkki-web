@@ -1,9 +1,9 @@
-import { Bot, Gavel, Music, Palette, Shield, Database, Smile, PartyPopper, Zap, ScanFace, SlidersHorizontal, Gamepad2, UserCog, PencilRuler } from "lucide-react";
+import { Music, Palette, Shield, Zap, Gamepad2, PencilRuler } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
-import { HeroAnimation } from "@/components/hero-animation";
 import { FeatureCards } from "@/components/feature-cards";
 import { ArrowRight } from "lucide-react";
+import { Hero } from "@/components/hero";
 
 export default function Home() {
   const features = [
@@ -55,9 +55,7 @@ export default function Home() {
       </header>
       
       <main className="flex-1">
-        <section className="container text-center py-24 md:py-40 flex justify-center items-center min-h-[400px]">
-          <HeroAnimation />
-        </section>
+        <Hero />
 
         <section id="features" className="py-20 md:py-32 bg-secondary/80">
           <div className="container">
