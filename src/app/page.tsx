@@ -2,7 +2,6 @@ import { Bot, Gavel, Music, Palette, Shield, Database, Smile, PartyPopper } from
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import CommandReference from "@/components/command-reference";
-import ChronoBotModel from "@/components/chrono-bot-model";
 import { Logo } from "@/components/logo";
 
 export default function Home() {
@@ -64,8 +63,8 @@ export default function Home() {
       </header>
       
       <main className="flex-1">
-        <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32 animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <div className="flex flex-col gap-4">
+        <section className="container text-center py-20 md:py-32 animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <div className="flex flex-col gap-4 items-center">
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter">
               The All-in-One Discord Bot
             </h1>
@@ -76,9 +75,6 @@ export default function Home() {
               <Button size="lg" className="font-bold">Add to Discord</Button>
               <Button size="lg" variant="outline">Learn More</Button>
             </div>
-          </div>
-          <div className="w-full h-[400px] lg:h-[500px]">
-             <ChronoBotModel />
           </div>
         </section>
 
