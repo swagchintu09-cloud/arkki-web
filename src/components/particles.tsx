@@ -7,7 +7,6 @@ export function Particles({
   className,
   quantity = 150,
   ease = 50,
-  connectDistance = 100,
 }: {
   className?: string;
   quantity?: number;
@@ -111,27 +110,6 @@ export function Particles({
     return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
   }
 
-  const connectParticles = () => {
-    if (!context.current) return;
-    const particlesWithMouse = [...circles.current, { ...mousePosition.current, R: 0, S: 0, dX: 0, dY: 0 }];
-
-    for (let i = 0; i < particlesWithMouse.length; i++) {
-      for (let j = i + 1; j < particlesWithMouse.length; j++) {
-        const distance = findDistance(particlesWithMouse[i], particlesWithMouse[j]);
-        if (distance < connectDistance) {
-            const opacity = 1 - (distance / connectDistance);
-            context.current.strokeStyle = `hsla(var(--primary), ${opacity * 0.5})`;
-            context.current.lineWidth = 0.5;
-            context.current.beginPath();
-            context.current.moveTo(particlesWithMouse[i].x, particlesWithMouse[i].y);
-            context.current.lineTo(particlesWithMouse[j].x, particlesWithMouse[j].y);
-            context.current.stroke();
-        }
-      }
-    }
-  }
-
-
   const animate = () => {
     clearContext();
     
@@ -154,8 +132,6 @@ export function Particles({
 
       drawParticle(particle);
     });
-
-    connectParticles();
 
     requestAnimationFrameRef.current = requestAnimationFrame(animate);
   };
