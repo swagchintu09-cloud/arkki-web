@@ -7,19 +7,23 @@ import { Search } from "lucide-react";
 import anime from "animejs";
 
 const commands = [
-  { category: "Music", name: "/play", description: "Plays a song from YouTube, Spotify, etc." },
+  { category: "Music", name: "/play", description: "Plays a song from YouTube, Spotify, SoundCloud, etc." },
   { category: "Music", name: "/skip", description: "Skips the current song." },
   { category: "Music", name: "/queue", description: "Shows the server's music queue." },
-  { category: "Music", name: "/volume", description: "Adjusts the music volume." },
+  { category: "Music", name: "/lyrics", description: "Gets the lyrics for the current song." },
   { category: "Moderation", name: "/kick", description: "Kicks a member from the server." },
   { category: "Moderation", name: "/ban", description: "Bans a member from the server." },
   { category: "Moderation", name: "/mute", description: "Mutes a member in text channels." },
   { category: "Moderation", name: "/warn", description: "Warns a member." },
+  { category: "Moderation", name: "/purge", description: "Deletes a specified number of messages." },
   { category: "Fun", name: "/meme", description: "Shows a random meme." },
   { category: "Fun", name: "/8ball", description: "Ask the magic 8-ball a question." },
   { category: "Fun", name: "/avatar", description: "Displays a user's avatar." },
+  { category: "Automation", name: "/auto-responder", description: "Set up custom triggers and replies." },
+  { category: "Automation", name: "/auto-react", description: "Configure automatic reactions to messages." },
+  { category: "Automation", name: "/voice-roles", description: "Assign roles based on voice channel activity." },
   { category: "Utility", name: "/userinfo", description: "Shows information about a user." },
-  { category: "Utility", name: "/serverinfo", description: "Shows information about the server." },
+  { category: "Utility", name: "Iserverinfo", description: "Shows information about the server." },
   { category: "Utility", name: "/ping", description: "Checks the bot's latency." },
 ];
 

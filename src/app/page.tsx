@@ -1,4 +1,4 @@
-import { Bot, Gavel, Music, Palette, Shield, Database, Smile, PartyPopper } from "lucide-react";
+import { Bot, Gavel, Music, Palette, Shield, Database, Smile, PartyPopper, Zap, ScanFace, SlidersHorizontal, Gamepad2, UserCog, PencilRuler } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CommandReference from "@/components/command-reference";
 import { Logo } from "@/components/logo";
@@ -9,45 +9,35 @@ import { ArrowRight } from "lucide-react";
 export default function Home() {
   const features = [
     {
-      icon: <Palette className="h-8 w-8 text-primary" />,
-      title: "Aesthetic UI",
-      description: "Engaging and beautiful user interfaces powered by Canvas for a unique server experience.",
+      icon: <Music className="h-8 w-8 text-primary" />,
+      title: "Music System",
+      description: "High-quality, lag-free music supporting YouTube, Spotify, and more with playlists and lyrics.",
     },
     {
-      icon: <Music className="h-8 w-8 text-primary" />,
-      title: "Advanced Music System",
-      description: "High-quality music streaming using Kazagumo and Shoukaku for lossless audio.",
+      icon: <Palette className="h-8 w-8 text-primary" />,
+      title: "Aesthetic UI",
+      description: "Canvas-based welcome banners, profile cards, and customizable templates.",
     },
     {
       icon: <Shield className="h-8 w-8 text-primary" />,
-      title: "Anti-Nuke & Automod",
-      description: "Top-tier security features to protect your server from raids and malicious users.",
+      title: "Security & Moderation",
+      description: "Advanced anti-nuke, automod for spam/mentions, and full moderation tools.",
     },
     {
-      icon: <Gavel className="h-8 w-8 text-primary" />,
-      title: "Powerful Moderation",
-      description: "A comprehensive suite of moderation tools to manage your community effectively.",
+      icon: <Zap className="h-8 w-8 text-primary" />,
+      title: "Automation & Roles",
+      description: "Auto-responder, auto-react, auto-pfp, and voice role assignment.",
     },
     {
-      icon: <Bot className="h-8 w-8 text-primary" />,
-      title: "Full Automation",
-      description: "Auto-responders, auto-react, voice roles, and more to automate server tasks.",
+      icon: <Gamepad2 className="h-8 w-8 text-primary" />,
+      title: "Fun & Utility",
+      description: "Engaging games, memes, interactive commands, user profiles, and leveling.",
     },
     {
-      icon: <Database className="h-8 w-8 text-primary" />,
-      title: "Persistent Data",
-      description: "All settings, profiles, and playlists are securely stored using MongoDB.",
+      icon: <PencilRuler className="h-8 w-8 text-primary" />,
+      title: "Modern Tech Stack",
+      description: "Built with discord.js, Kazagumo, Shoukaku, and Mongoose for performance.",
     },
-    {
-      icon: <Smile className="h-8 w-8 text-primary" />,
-      title: "Fun & Engaging",
-      description: "Keep your community active with fun modules, games, and social commands."
-    },
-    {
-      icon: <PartyPopper className="h-8 w-8 text-primary" />,
-      title: "Custom Profiles",
-      description: "Playlist-enabled welcome messages and customizable user profile cards."
-    }
   ];
 
   return (
@@ -57,7 +47,7 @@ export default function Home() {
         <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
           <div className="flex items-center gap-3">
             <Logo />
-            <p className="text-xl font-bold font-headline">ChronoBot</p>
+            <p className="text-xl font-bold font-headline">Arrkiii</p>
           </div>
           <Button>
             Add to Discord <ArrowRight />
@@ -75,7 +65,7 @@ export default function Home() {
             <div className="max-w-2xl mx-auto text-center mb-16">
               <h2 className="font-headline text-3xl md:text-5xl font-extrabold">Everything Your Server Needs</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                ChronoBot is packed with features to create a vibrant and secure community.
+                Arrkiii is packed with features to create a vibrant and secure community.
               </p>
             </div>
             <FeatureCards features={features} />
@@ -87,7 +77,7 @@ export default function Home() {
             <div className="max-w-2xl mx-auto text-center mb-16">
               <h2 className="font-headline text-3xl md:text-5xl font-extrabold">Command Reference</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Find all the commands you need to master ChronoBot.
+                Find all the commands you need to master Arrkiii.
               </p>
             </div>
             <CommandReference />
@@ -97,7 +87,7 @@ export default function Home() {
 
       <footer className="py-6 border-t border-border/40">
         <div className="container text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} ChronoBot Showcase. All Rights Reserved.
+          © {new Date().getFullYear()} Arrkiii. All Rights Reserved.
         </div>
       </footer>
     </div>

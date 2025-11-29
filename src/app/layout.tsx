@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'ChronoBot Showcase',
-  description: 'The All-in-One Discord Bot for your server.',
+  title: 'Arrkiii Latest',
+  description: 'A feature-rich, modern Discord bot with a beautiful UI, best-in-class music system, advanced moderation, and automation tools.',
 };
 
 export default function RootLayout({
