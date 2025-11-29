@@ -4,7 +4,7 @@ import { Logo } from "@/components/logo";
 import { FeatureCards } from "@/components/feature-cards";
 import { ArrowRight } from "lucide-react";
 import { Hero } from "@/components/hero";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Home() {
   const features = [
@@ -63,6 +63,9 @@ export default function Home() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
+                <SheetHeader>
+                  <SheetTitle className="sr-only">Menu</SheetTitle>
+                </SheetHeader>
                 <div className="grid gap-4 py-6">
                   <div className="flex items-center gap-3">
                     <Logo />
