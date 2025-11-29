@@ -1,6 +1,5 @@
 import { Bot, Gavel, Music, Palette, Shield, Database, Smile, PartyPopper, Zap, ScanFace, SlidersHorizontal, Gamepad2, UserCog, PencilRuler } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CommandReference from "@/components/command-reference";
 import { Logo } from "@/components/logo";
 import { HeroAnimation } from "@/components/hero-animation";
 import { FeatureCards } from "@/components/feature-cards";
@@ -69,18 +68,6 @@ export default function Home() {
               </p>
             </div>
             <FeatureCards features={features} />
-          </div>
-        </section>
-
-        <section id="commands" className="py-20 md:py-32">
-          <div className="container">
-            <div className="max-w-2xl mx-auto text-center mb-16">
-              <h2 className="font-headline text-3xl md:text-5xl font-extrabold">Command Reference</h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Find all the commands you need to master Arrkiii.
-              </p>
-            </div>
-            <CommandReference />
           </div>
         </section>
       </main>
