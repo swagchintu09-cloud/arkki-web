@@ -23,7 +23,7 @@ export default function CommandsPage() {
                 <h2 className="font-headline text-3xl font-bold text-primary mb-8">{category.name}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.commands.map((command) => (
-                    <Card key={command.name} className="bg-card/80 backdrop-blur-sm">
+                    <Card key={command.name} className="bg-card/80 backdrop-blur-sm transform hover:-translate-y-2 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-primary/20">
                       <CardHeader>
                         <CardTitle className="flex items-center justify-between">
                           <span className="font-code text-lg">/{command.name}</span>

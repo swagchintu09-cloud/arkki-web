@@ -1,9 +1,12 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Particles } from "@/components/particles";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import docs from "@/lib/content/documents.json";
 
 export default function DocumentsPage() {
@@ -19,23 +22,17 @@ export default function DocumentsPage() {
               {docs.description}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Accordion type="single" collapsible className="w-full">
               {docs.categories.map((category) => (
-                <Link href={category.href} key={category.title} className="group">
-                  <Card className="bg-card/80 backdrop-blur-sm h-full transform hover:-translate-y-2 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-primary/20">
-                    <CardHeader>
-                      <CardTitle className="flex items-center justify-between">
-                        {category.title}
-                        <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription>{category.description}</CardDescription>
-                    </CardContent>
-                  </Card>
-                </Link>
+                <AccordionItem key={category.title} value={category.title}>
+                  <AccordionTrigger className="text-xl font-headline hover:no-underline">{category.title}</AccordionTrigger>
+                  <AccordionContent className="text-base text-muted-foreground">
+                    <p className="font-bold text-primary mb-4">{category.description}</p>
+                    {category.content}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
       </main>

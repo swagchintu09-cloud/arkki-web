@@ -5,22 +5,22 @@
         {
             "title": "Getting Started",
             "description": "Learn how to add Arrkiii to your server and perform the initial configuration.",
-            "href": "#"
+            "content": "To add Arrkiii to your Discord server, simply click the 'Add to Discord' button on our homepage. You will be redirected to Discord to authorize the bot. Make sure you have 'Manage Server' permissions to complete this step. Once added, Arrkiii will automatically create a #welcome channel and post initial setup instructions there."
         },
         {
             "title": "Music System",
             "description": "Detailed guides on using the music commands, managing playlists, and troubleshooting.",
-            "href": "#"
+            "content": "Arrkiii's music system is powerful yet easy to use. Start by joining a voice channel and using the `/play` command with a song name or URL. You can manage the queue with `/queue`, skip songs with `/skip`, and even get lyrics with `/lyrics`. For high-fidelity audio, consider upgrading to Premium for access to our dedicated audio servers."
         },
         {
             "title": "Moderation",
             "description": "Understand how to use the moderation tools, configure automod, and set up anti-nuke.",
-            "href": "#"
+            "content": "Keep your server safe with Arrkiii's robust moderation toolkit. Standard commands include `/kick`, `/ban`, and `/mute`. You can configure the automod feature by visiting your server's dashboard on our website. The anti-nuke system provides critical protection against rogue administrators and requires careful setup in the dashboard."
         },
         {
             "title": "Customization",
             "description": "Customize welcome banners, profile cards, and other aesthetic features.",
-            "href": "#"
+            "content": "Make Arrkiii your own! Visit the dashboard to customize the appearance of welcome banners, level-up notifications, and user profile cards. You can change colors, background images, and more to match your server's unique brand and style."
         }
     ]
 }
