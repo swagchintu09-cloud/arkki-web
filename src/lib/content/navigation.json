@@ -1,0 +1,15 @@
+{
+  "headerLinks": [
+    { "href": "/about", "label": "About" },
+    { "href": "/commands", "label": "Commands" },
+    { "href": "/documents", "label": "Docs" }
+  ],
+  "footerLinks": [
+    { "href": "/about", "label": "About" },
+    { "href": "/commands", "label": "Commands" },
+    { "href": "/documents", "label": "Docs" },
+    { "href": "/#features", "label": "Features" },
+    { "href": "#", "label": "Terms of Service" },
+    { "href": "#", "label": "Privacy Policy" }
+  ]
+}

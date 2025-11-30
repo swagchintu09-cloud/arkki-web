@@ -1,0 +1,18 @@
+{
+    "title": "About Arrkiii",
+    "subtitle": "Discover the story, mission, and the technology that powers the most advanced Discord bot.",
+    "sections": [
+      {
+        "title": "Our Mission",
+        "content": "Our mission is to provide Discord communities with a powerful, reliable, and beautiful bot that enhances user engagement and simplifies server management. We believe in creating tools that are not only functional but also a joy to use. Arrkiii is the culmination of countless hours of development, driven by a passion for building thriving online communities."
+      },
+      {
+        "title": "The Technology",
+        "content": "Arrkiii is built on a foundation of modern and robust technologies to ensure performance, stability, and scalability. We leverage the power of Node.js and the discord.js library for core bot functionality. Our music system is powered by Kazagumo and Shoukaku for lag-free, high-fidelity audio. For data persistence, we rely on Mongoose and MongoDB, ensuring your server's data is always safe and quickly accessible."
+      },
+      {
+        "title": "The Team",
+        "content": "We are a small, dedicated team of developers and designers who are passionate about Discord and the communities within it. We are committed to continuous improvement and are always working on new features and enhancements for Arrkiii. We love hearing from our users, so feel free to join our support server and share your feedback!"
+      }
+    ]
+}

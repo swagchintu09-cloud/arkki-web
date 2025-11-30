@@ -5,7 +5,15 @@ import anime from 'animejs';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
-export function Hero() {
+interface HeroProps {
+    badge: string;
+    title: string;
+    description: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+}
+
+export function Hero({ badge, title, description, ctaPrimary, ctaSecondary }: HeroProps) {
     const heroRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const [showLoader, setShowLoader] = useState(true);
@@ -58,20 +66,20 @@ export function Hero() {
           ) : (
             <div ref={heroRef} className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
                 <div data-animate className="inline-block bg-primary/10 text-primary font-medium text-sm px-4 py-2 rounded-full opacity-0">
-                    A feature-rich, modern Discord bot
+                    {badge}
                 </div>
                 <h1 ref={titleRef} data-animate className="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight opacity-1">
-                  Arrkiii Latest
+                  {title}
                 </h1>
                 <p data-animate className="max-w-[700px] text-muted-foreground md:text-xl opacity-0">
-                  A feature-rich, modern Discord bot with a beautiful UI, best-in-class music system, advanced moderation, and automation tools. Built with the latest JavaScript libraries and MongoDB for performance and reliability.
+                  {description}
                 </p>
                 <div data-animate className="flex flex-col sm:flex-row gap-4 mt-6 opacity-0">
                   <Button size="lg" className="font-bold text-base group breathing-button">
-                    Add to Discord 
+                    {ctaPrimary}
                     <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>
-                  <Button size="lg" variant="outline" className="font-bold text-base">Learn More</Button>
+                  <Button size="lg" variant="outline" className="font-bold text-base">{ctaSecondary}</Button>
                 </div>
               </div>
           )}

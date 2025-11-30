@@ -1,0 +1,26 @@
+{
+    "title": "Documentation",
+    "description": "Find everything you need to get started and master Arrkiii. From initial setup to advanced configurations, our documentation has you covered.",
+    "categories": [
+        {
+            "title": "Getting Started",
+            "description": "Learn how to add Arrkiii to your server and perform the initial configuration.",
+            "href": "#"
+        },
+        {
+            "title": "Music System",
+            "description": "Detailed guides on using the music commands, managing playlists, and troubleshooting.",
+            "href": "#"
+        },
+        {
+            "title": "Moderation",
+            "description": "Understand how to use the moderation tools, configure automod, and set up anti-nuke.",
+            "href": "#"
+        },
+        {
+            "title": "Customization",
+            "description": "Customize welcome banners, profile cards, and other aesthetic features.",
+            "href": "#"
+        }
+    ]
+}

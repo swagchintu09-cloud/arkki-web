@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "badge": "A feature-rich, modern Discord bot",
+    "title": "Arrkiii Latest",
+    "description": "A feature-rich, modern Discord bot with a beautiful UI, best-in-class music system, advanced moderation, and automation tools. Built with the latest JavaScript libraries and MongoDB for performance and reliability.",
+    "ctaPrimary": "Add to Discord",
+    "ctaSecondary": "Learn More"
+  },
+  "featuresSection": {
+    "title": "Everything Your Server Needs",
+    "description": "Arrkiii is packed with features to create a vibrant and secure community.",
+    "features": [
+      {
+        "icon": "Music",
+        "title": "Music System",
+        "description": "High-quality, lag-free music supporting YouTube, Spotify, and more with playlists and lyrics."
+      },
+      {
+        "icon": "Palette",
+        "title": "Aesthetic UI",
+        "description": "Canvas-based welcome banners, profile cards, and customizable templates."
+      },
+      {
+        "icon": "Shield",
+        "title": "Security & Moderation",
+        "description": "Advanced anti-nuke, automod for spam/mentions, and full moderation tools."
+      },
+      {
+        "icon": "Zap",
+        "title": "Automation & Roles",
+        "description": "Auto-responder, auto-react, auto-pfp, and voice role assignment."
+      },
+      {
+        "icon": "Gamepad2",
+        "title": "Fun & Utility",
+        "description": "Engaging games, memes, interactive commands, user profiles, and leveling."
+      },
+      {
+        "icon": "PencilRuler",
+        "title": "Modern Tech Stack",
+        "description": "Built with discord.js, Kazagumo, Shoukaku, and Mongoose for performance."
+      }
+    ]
+  }
+}

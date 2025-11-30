@@ -1,0 +1,74 @@
+{
+  "categories": [
+    {
+      "name": "Music",
+      "commands": [
+        {
+          "name": "play",
+          "description": "Plays a song from YouTube, Spotify, etc.",
+          "badge": ""
+        },
+        {
+          "name": "skip",
+          "description": "Skips the current song.",
+          "badge": ""
+        },
+        {
+          "name": "queue",
+          "description": "Shows the current music queue.",
+          "badge": ""
+        },
+        {
+          "name": "lyrics",
+          "description": "Gets the lyrics for the current song.",
+          "badge": "Premium"
+        }
+      ]
+    },
+    {
+      "name": "Moderation",
+      "commands": [
+        {
+          "name": "kick",
+          "description": "Kicks a member from the server.",
+          "badge": ""
+        },
+        {
+          "name": "ban",
+          "description": "Bans a member from the server.",
+          "badge": ""
+        },
+        {
+          "name": "mute",
+          "description": "Mutes a member in text channels.",
+          "badge": ""
+        },
+        {
+          "name": "clear",
+          "description": "Deletes a specified number of messages.",
+          "badge": ""
+        }
+      ]
+    },
+    {
+      "name": "Fun & Utility",
+      "commands": [
+        {
+          "name": "profile",
+          "description": "Displays your server profile and rank.",
+          "badge": ""
+        },
+        {
+          "name": "meme",
+          "description": "Generates a random meme.",
+          "badge": ""
+        },
+        {
+          "name": "weather",
+          "description": "Shows the weather for a specified location.",
+          "badge": ""
+        }
+      ]
+    }
+  ]
+}
