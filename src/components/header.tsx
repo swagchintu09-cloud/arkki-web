@@ -15,7 +15,7 @@ export function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <Logo />
-          <p className="text-xl font-bold font-headline">Security X</p>
+          <p className="text-xl font-bold font-headline">Arrkiii</p>
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
@@ -27,10 +27,12 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button className="group breathing-button">
-            Add to Discord 
-            <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
+          <Link href="https://discord.com/oauth2/authorize?client_id=1485896423848284240&permissions=8&integration_type=0&scope=bot">
+            <Button className="group breathing-button">
+              Add to Discord 
+              <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
         
         <div className="md:hidden">
@@ -48,7 +50,7 @@ export function Header() {
               <div className="grid gap-4 py-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Logo />
-                  <p className="text-xl font-bold font-headline">Security X</p>
+                  <p className="text-xl font-bold font-headline">Arrkiii</p>
                 </div>
                 <nav className="grid gap-4">
                   {headerLinks.map(link => (
@@ -57,9 +59,11 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                <Button className="breathing-button mt-4">
-                  Add to Discord <ArrowRight />
-                </Button>
+                <Link href="https://discord.com/oauth2/authorize?client_id=1485896423848284240&permissions=8&integration_type=0&scope=bot">
+                  <Button className="breathing-button mt-4">
+                    Add to Discord <ArrowRight />
+                  </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
