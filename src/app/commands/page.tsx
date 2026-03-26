@@ -68,7 +68,7 @@ export default function CommandsPage() {
           <div className="max-w-6xl mx-auto">
             <h1 ref={titleRef} className="font-headline text-4xl md:text-6xl font-extrabold text-center mb-8">Commands</h1>
             <p className="text-lg text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
-              Explore the wide range of commands Arrkiii offers to manage and entertain your server.
+              Explore the wide range of commands Security X offers to manage and entertain your server.
             </p>
 
             {commands.categories.map((category) => (
