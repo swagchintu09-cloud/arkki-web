@@ -43,6 +43,11 @@
           "name": "weather",
           "description": "Shows the weather for a specified location.",
           "badge": ""
+        },
+        {
+          "name": "more"
+          "description": "For more commands use &help.",
+          "badge": ""
         }
       ]
     }
